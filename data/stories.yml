@@ -41,4 +41,3 @@ stories:
   - action: action_store_name
   - slot_was_set:
     - username: "phani"
-  - action: action_store_name

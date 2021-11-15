@@ -8,12 +8,12 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
+import typing_extensions
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
-#
 class Actionstorename(Action):
 
     def name(self) -> Text:
@@ -22,11 +22,11 @@ class Actionstorename(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        temp = tracker.get_slot("username")
+        test = tracker.get_slot("username")
 
-        dispatcher.utter_message(text="Ill save the name")
-        print("Your name is {}".format(temp))
-        return [SlotSet("username", temp)]
+        dispatcher.utter_message(text=f"welcome to the!{test}")
+       
+        return [SlotSet("username", test)]
 
 
 
